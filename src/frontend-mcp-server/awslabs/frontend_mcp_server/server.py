@@ -1,7 +1,7 @@
 """awslabs frontend MCP Server implementation."""
 
 import argparse
-from awslabs.frontend_mcp_server.utils.file_utils import load_markdown_files
+from awslabs.frontend_mcp_server.utils.file_utils import load_markdown_file
 from mcp.server.fastmcp import FastMCP
 from pydantic import Field
 from typing import Literal
@@ -16,34 +16,33 @@ mcp = FastMCP(
 )
 
 
-# Load the markdown contents
-REACT_ROUTER_CONTENT, OPTIMISTIC_UI_CONTENT = load_markdown_files()
-
-
 @mcp.tool(name='GetReactDocsByTopic')
 async def get_react_docs_by_topic(
-    topic: Literal['router', 'optimistic-ui'] = Field(
+    topic: Literal['basic-ui'] = Field(
         ...,
-        description='The topic of React documentation to retrieve. Must be one of: router, optimistic-ui',
+        description='The topic of React documentation to retrieve. Must be one of: basic-ui',
     ),
 ) -> str:
-    """Get specific React documentation by topic.
+    """Get specific AWS web application UI setup documentation by topic.
 
     Parameters:
-        topic (Literal["router", "optimistic-ui"]): The topic of React documentation to retrieve.
-          - "router": Documentation for React Router v7 with TypeScript
-          - "optimistic-ui": Documentation for Optimistic UI patterns in React 19
+        topic (Literal["basic-ui"]): The topic of React documentation to retrieve.
+          - "basic-ui": Documentation for basic UI setup for an AWS Amplify web application.
 
     Returns:
         A markdown string containing the requested documentation
     """
     match topic:
-        case 'router':
-            return REACT_ROUTER_CONTENT
-        case 'optimistic-ui':
-            return OPTIMISTIC_UI_CONTENT
+        case 'basic-ui':
+            return load_markdown_file('basic-ui-setup.md')
+        case 'routing':
+            return load_markdown_file('routing-implementation.md')
+        case 'login':
+            return load_markdown_file('login-screen-customization.md')
+        case 'auth':
+            return load_markdown_file('amplify_authentication-setup.md')
         case _:
-            raise ValueError(f'Invalid topic: {topic}. Must be one of: router, optimistic-ui')
+            raise ValueError(f'Invalid topic: {topic}. Must be one of: basic-ui, routing, login, auth')
 
 
 def main():

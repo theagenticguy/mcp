@@ -41,6 +41,8 @@ When a user presents a query, follow these steps to break it down:
     - Use `recommend` when: You want to find related content to a documentation page you're already viewing or need to find newly released information
     - Use `recommend` as a fallback when: Multiple searches have not yielded the specific information needed
 
+- Use `awslabs.frontend-mcp-server` for setting up the UI using React and leveraging the AWS Amplify libraries to connect to the AWS backend
+
 ### 2.2 Modern AWS Service Categories
 
 Map user requirements to these AWS categories:
@@ -147,7 +149,7 @@ Analysis:
 - Data retrieval system
 
 2. AWS Solution Mapping:
-- Frontend: Vite, React, Mantine v7, TanStack Query, TanStack Router, TypeScript, Amplify libraries for authentication, authorization, and storage
+- Frontend: Vite, React 19, Tailwind 4, shadcn ui components, TypeScript, Amplify libraries for authentication, authorization, and storage
 - Database: DynamoDB for radio logs
 - API: AppSync for GraphQL data access
 - Chat: Amplify Gen2 AI Conversation data model

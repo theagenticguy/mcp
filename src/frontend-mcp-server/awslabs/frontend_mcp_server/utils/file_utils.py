@@ -4,37 +4,40 @@ from pathlib import Path
 from typing import Tuple
 
 
-def load_markdown_files() -> Tuple[str, str]:
-    """Load markdown files from the static/react directory.
+def load_markdown_file(filename: str) -> str:
+    """Load a markdown file from the static/react directory.
 
-    This function reads the content of React-related markdown documentation
-    files from the static/react directory.
+    Args:
+        filename (str): The name of the markdown file to load (e.g. 'basic-ui-setup.md')
 
     Returns:
-        Tuple[str, str]: A tuple containing the content of react_router.md
-        and optimistic_ui.md files.
+        str: The content of the markdown file, or empty string if file not found
     """
-    # Find the path to the static/react directory relative to this file
-    # Go up two levels from utils/file_utils.py to the frontend_mcp_server directory
     base_dir = Path(__file__).parent.parent
     react_dir = base_dir / 'static' / 'react'
+    file_path = react_dir / filename
 
-    react_router_path = react_dir / 'react_router.md'
-    optimistic_ui_path = react_dir / 'optimistic_ui.md'
-
-    react_router_content = ''
-    optimistic_ui_content = ''
-
-    if react_router_path.exists():
-        with open(react_router_path, 'r', encoding='utf-8') as f:
-            react_router_content = f.read()
+    if file_path.exists():
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
     else:
-        print(f'Warning: File not found: {react_router_path}')
+        print(f'Warning: File not found: {file_path}')
+        return ''
 
-    if optimistic_ui_path.exists():
-        with open(optimistic_ui_path, 'r', encoding='utf-8') as f:
-            optimistic_ui_content = f.read()
-    else:
-        print(f'Warning: File not found: {optimistic_ui_path}')
 
-    return react_router_content, optimistic_ui_content
+def load_markdown_files() -> Tuple[str, str, str, str]:
+    """Load all markdown files from the static/react directory.
+
+    Returns:
+        Tuple[str, str, str, str]: A tuple containing the content of:
+        - basic-ui-setup.md
+        - routing-implementation.md
+        - login-screen-customization.md
+        - amplify_authentication-setup.md
+    """
+    return (
+        load_markdown_file('basic-ui-setup.md'),
+        load_markdown_file('routing-implementation.md'),
+        load_markdown_file('login-screen-customization.md'),
+        load_markdown_file('amplify_authentication-setup.md')
+    )
