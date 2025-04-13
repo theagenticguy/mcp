@@ -12,11 +12,11 @@ Using shadcn components, create the layout for unauthenticated pages in src/layo
 1. The page should be a 50/50 split with the left side an image placeholder with application name and description in bottom left with ample margin
 2. The right side should have the Amplify Authenticator component v/h centered
 
-Using shadcn components, create a src/pages/Login.tsx page that uses this layout
+Using shadcn components, create a src/pages/Login.tsx page that uses UnauthenticatedLayout.tsx
 
-Using shadcn components, create the layout for authenticated pages in src/layout/AuthenticatedLayout.tsx as follows
-1. The layout should have an application header that has the brand logo and application name on the left. The user name and avatar on the right dropping down to a Signout option
-2. A collapsible navbar linking the main pages on the left
+Using shadcn components, create the layout for authenticated pages in src/layout/AuthenticatedLayout.tsx as follows. Update or create the src/components/app-sidebar.tsx
+1. The layout should have left sidebar that has the brand logo and application name on the left. The user name and avatar on the bottom of the sidebar, with dropdown to a Signout option
+2. Links to the main pages
 3. A main content area that holds the current page based on the route
 
 Create the necessary authenticated and unauthenticated routes

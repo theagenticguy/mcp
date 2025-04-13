@@ -16,4 +16,6 @@ Follow the instructions in "customizing-the-application" to customize the applic
 
 General guidelines:
 - Install and use shadcn components where available vs. creating custom components
+- For simplicity and maintainability, prefer using Zustand stores for global state management vs. component level state/prop-drilling
+- Create an application name, descriptio, and sample data based on the functional purpose of the application to make it more realistic
 
