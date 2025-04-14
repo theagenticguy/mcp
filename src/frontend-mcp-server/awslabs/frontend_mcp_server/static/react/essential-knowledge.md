@@ -179,10 +179,10 @@ Based on your analysis, update the README.md with an overview of the functional 
     - Use primarily dark shades of the primary color with subtle accent colors if appropriate
     - Design should convey the app's purpose through abstract visual elements
     - Can include subtle patterns, gradients, or geometric shapes
-- Use a cross-platform package like shx to overwrite the existing placeholder images in the /public folder as follows
+- Use a cross-platform package like shx to overwrite the existing placeholder images in the /public folder, example below:
 
 ```bash
-npx shx mv output/nova_canvas_7kie7lrx_1.png ./frontend/public/favicon.png
+npx shx mv output/generated-favicon.png ./frontend/public/favicon.png
 ```
 
 - Replace existing app icon references with generated favicon.png
