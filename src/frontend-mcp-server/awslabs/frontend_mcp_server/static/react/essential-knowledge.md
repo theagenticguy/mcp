@@ -168,7 +168,7 @@ Based on your analysis, update the README.md with an overview of the functional 
 - Update document title and metadata in index.html
 - Customize the primary color for the application using Tailwind if the user has provided a custom primary color for the app
 - When setting primary color, you MUST update both the Tailwind and Amplify theme to keep them in sync
-- Use Nova Canvas MCP Server to create:
+- Use Nova Canvas MCP Server to create the following 2 images:
   - **favicon.png (320x320)**
     - Create a minimal abstract icon that represents the app concept
     - Use monochromatic shades of the primary color
@@ -179,7 +179,12 @@ Based on your analysis, update the README.md with an overview of the functional 
     - Use primarily dark shades of the primary color with subtle accent colors if appropriate
     - Design should convey the app's purpose through abstract visual elements
     - Can include subtle patterns, gradients, or geometric shapes
-- Place both images in the /public folder overwriting the existing placeholder images
+- Use a cross-platform package like shx to overwrite the existing placeholder images in the /public folder as follows
+
+```bash
+npx shx mv output/nova_canvas_7kie7lrx_1.png ./frontend/public/favicon.png
+```
+
 - Replace existing app icon references with generated favicon.png
 
 **PHASE VERIFICATION**: Confirm all branding elements are consistently updated throughout the application. Verify both favicon.png and splash.png are properly generated and placed in the public folder.

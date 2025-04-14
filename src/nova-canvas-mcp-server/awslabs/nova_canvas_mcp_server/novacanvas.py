@@ -163,8 +163,8 @@ async def generate_image_with_text(
         negative_prompt: Text to define what not to include in the image (1-1024 characters).
         filename: The name of the file to save the image to (without extension).
             If not provided, a random name will be generated.
-        width: The width of the generated image (320-4096, divisible by 16).
-        height: The height of the generated image (320-4096, divisible by 16).
+        width: The width of the generated image (320-4096, divisible by 16). Minimum 320, maximum 4096.
+        height: The height of the generated image (320-4096, divisible by 16). Minimum 320, maximum 4096.
         quality: The quality of the generated image ("standard" or "premium").
         cfg_scale: How strongly the image adheres to the prompt (1.1-10.0).
         seed: Seed for generation (0-858,993,459). Random if not provided.
