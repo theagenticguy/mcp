@@ -119,7 +119,7 @@ Now you can install shadcn/ui components as needed. The following components are
 If prompted, choose the --force flag to avoid dependency issues as these are new versions of the packages. 
 
 ```bash
-npx shadcn@latest add select card dialog textarea badge label form table collapsible avatar dropdown-menu skeleton input tooltip sheet button separator breadcrumb sidebar
+npx shadcn add select card dialog textarea badge label form table collapsible avatar dropdown-menu skeleton input tooltip sheet button separator breadcrumb sidebar
 ```
 
 ## Install other required libraries

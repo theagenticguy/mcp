@@ -18,21 +18,16 @@ mcp = FastMCP(
 
 @mcp.tool(name='GetReactDocsByTopic')
 async def get_react_docs_by_topic(
-    topic: Literal['essential-knowledge', 'basic-ui', 'authentication', 'routing', 'customizing', 'creating-components'] = Field(
+    topic: Literal['essential-knowledge'] = Field(
         ...,
-        description='The topic of React documentation to retrieve. Must be one of: essential-knowledge, basic-ui, authentication, routing, customizing, creating-components. Topics are numbered in recommended sequence.',
+        description='The topic of React documentation to retrieve. Must be one of: essential-knowledge. Topics are numbered in recommended sequence.',
     ),
 ) -> str:
     """Get specific AWS web application UI setup documentation by topic.
 
     Parameters:
-        topic (Literal["essential-knowledge", "basic-ui", "authentication", "routing", "customizing", "creating-components"]): The topic of React documentation to retrieve.
+        topic (Literal["essential-knowledge"]): The topic of React documentation to retrieve.
           - 1. "essential-knowledge": Essential knowledge for working with React applications.
-          - 2. "basic-ui": Documentation for basic UI setup for an AWS Amplify web application.
-          - 3. "authentication": Documentation for setting up authentication in the application.
-          - 4. "routing": Documentation for implementing routing in the application.
-          - 5. "customizing": Documentation for customizing the application.
-          - 6. "creating-components": Documentation for creating new components.
 
     Returns:
         A markdown string containing the requested documentation
