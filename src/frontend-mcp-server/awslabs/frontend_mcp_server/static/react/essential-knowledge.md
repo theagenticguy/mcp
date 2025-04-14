@@ -25,12 +25,39 @@ This document provides guidance for an LLM assistant helping users create custom
 
 ### 1. Document your plan
 
-Once you have completed your analysis, you MUST create a CHECKLIST.md in the root folder of the project that documents that contains the following:
-- Application name, description
-- Application goals and core features
-- A checklist listing the key pages that need to be created for this app. 
+Once you have completed your analysis, you MUST create a CHECKLIST.md in the root folder of the project with two clearly defined sections:
 
-As you go through the instructions below, keep adding to and updating this checklist to ensure that you have completely created all the pages and features necessary to meet the functional needs of the application the user wants to create.
+**Section 1: Application Analysis**
+- Application name and description
+- Target users and primary purpose
+- Core features (prioritized list)
+  - Be specific and detailed for each feature
+  - Include success criteria for each feature
+  - Identify which features require backend integration
+- Complete page list with brief descriptions for each page
+  - Detail EVERY page needed for the application
+  - Include purpose, key components, and data needs for each page
+  - Map pages to features they support
+- Data models/entities needed
+- UI components required for implementation
+  - List shadcn components to be used for each page
+  - Identify any custom components needed
+
+**Section 2: Implementation Checklist**
+- [ ] Generate modern app name/description
+- [ ] Clone repo to "frontend" folder and install dependencies
+- [ ] Update the README.md based on your analysis of the codebase and frontend stack
+- [ ] Update package.json name and app name references
+- [ ] Update app name and description on the login page
+- [ ] Generate favicon.png and splash.png images using nova canvas MCP server
+- [ ] Create mock amplify_outputs.json file
+- [ ] Add/update pages and required components, using shadcn components
+- [ ] Extend routing structure
+- [ ] Add sample data to Zustand store
+- [ ] Update navigation
+- [ ] Ensure all required pages are created and wired up
+
+As you go through the implementation, keep updating the checklist to ensure that you have completely created all the pages and features necessary to meet the functional needs of the application. The analysis section should be completed BEFORE beginning any implementation tasks.
 
 ### 2. Setup & Configuration
 ```bash
@@ -99,20 +126,4 @@ Based on your analysis, update the README.md with an overview of the functional 
 
 ## Final check
 
-Add these to the CHECKLIST.md and verify to make sure they are completed
-
-- [ ] Generate modern app name/description
-- [ ] Clone repo to "frontend" folder and install dependencies
-- [ ] Update the README.md based on your analysis of the codebase and frontend stack
-- [ ] Update package.json name and app name references
-- [ ] Update app name and description on the login page
-- [ ] Generate favicon.png and splash.png images
-- [ ] Replace app icon references with generated favicon.png
-- [ ] Create mock amplify_outputs.json file
-- [ ] Add/update pages and required components, using shadcn components
-- [ ] Extend routing structure
-- [ ] Add sample data to Zustand store
-- [ ] Update navigation
-- [ ] Ensure all required pages are created and wired up
-
-Conduct a final check to make sure that all items in the CHECKLIST.md are completely with a high level of quality and there are no errors or missing functionality.
+Conduct a final check to make sure that all items in the CHECKLIST.md are completed with a high level of quality and there are no errors or missing functionality.
