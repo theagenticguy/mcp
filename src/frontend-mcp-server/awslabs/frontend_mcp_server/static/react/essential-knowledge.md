@@ -3,10 +3,11 @@
 ## Introduction
 This document provides guidance for an LLM assistant helping users create custom web applications based on the reference UI template at https://github.com/sanjusunny/reference-ui. The template uses React, Tailwind CSS, React Router v7, shadcn UI components, AWS Amplify, and Zustand for state management. As the assisting LLM, you should use this information to analyze user requirements, suggest appropriate approaches, and provide implementation steps for customizing the reference template to meet their specific needs. Follow the structured approach outlined below to deliver high-quality applications efficiently while maintaining consistency with the existing architecture and best practices.
 
-## Key Assumptions
+## Important
 - Authentication, basic routing, and private/public layouts are already implemented
 - Sample dashboard and settings pages exist as reference
 - AWS backend integration will be handled separately
+- If you run into issues, you MUST seek guidance from the AWSLabs Frontend MCP server under the "Troubleshooting" topic.
 
 ## Project Implementation Flow
 
@@ -241,3 +242,4 @@ Based on your analysis, update the README.md with an overview of the functional 
 ## Final check
 
 Conduct a final check to make sure that all items in the CHECKLIST.md are completed with a high level of quality and there are no errors or missing functionality.
+

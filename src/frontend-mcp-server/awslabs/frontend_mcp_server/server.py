@@ -18,16 +18,17 @@ mcp = FastMCP(
 
 @mcp.tool(name='GetReactDocsByTopic')
 async def get_react_docs_by_topic(
-    topic: Literal['essential-knowledge'] = Field(
+    topic: Literal['essential-knowledge', 'troubleshooting'] = Field(
         ...,
-        description='The topic of React documentation to retrieve. Must be one of: essential-knowledge. Topics are numbered in recommended sequence.',
+        description='The topic of React documentation to retrieve. Must be one of: essential-knowledge, troubleshooting. Topics are numbered in recommended sequence.',
     ),
 ) -> str:
     """Get specific AWS web application UI setup documentation by topic.
 
     Parameters:
-        topic (Literal["essential-knowledge"]): The topic of React documentation to retrieve.
+        topic (Literal["essential-knowledge", "troubleshooting"]): The topic of React documentation to retrieve.
           - 1. "essential-knowledge": Essential knowledge for working with React applications.
+          - 2. "troubleshooting": Common issues and solutions when generating code.
 
     Returns:
         A markdown string containing the requested documentation
@@ -35,6 +36,8 @@ async def get_react_docs_by_topic(
     match topic:
         case 'essential-knowledge':
             return load_markdown_file('essential-knowledge.md')
+        case 'troubleshooting':
+            return load_markdown_file('troubleshooting.md')
         case 'basic-ui':
             return load_markdown_file('basic-ui-setup.md')
         case 'authentication':
