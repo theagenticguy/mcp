@@ -175,14 +175,14 @@ Based on your analysis, update the README.md with an overview of the functional 
     - Design should be simple enough to be recognizable at small sizes
     - Avoid text or complex details that won't scale down well
   - **splash.png (1024x1024)**
-    - Create a more elaborate abstract design that extends the favicon concept
+    - Create a compelling minimal abstract conceptual editorial illustration relevant to the concept of the app
     - Use primarily dark shades of the primary color with subtle accent colors if appropriate
     - Design should convey the app's purpose through abstract visual elements
     - Can include subtle patterns, gradients, or geometric shapes
-- Use a cross-platform package like shx to overwrite the existing placeholder images in the /public folder, example below:
+- You MUST use 'mv' to move the generated image and overwrite the existing image, as users can be on Windows or Unix systems and the 'move' command might not be available.
 
 ```bash
-npx shx mv output/generated-favicon.png ./frontend/public/favicon.png
+mv source-folder/file destination-folder/file
 ```
 
 - Replace existing app icon references with generated favicon.png
