@@ -149,7 +149,7 @@ Analysis:
 - Data retrieval system
 
 2. AWS Solution Mapping:
-- Frontend: Vite, React 19, Tailwind 4, shadcn ui components, TypeScript, Amplify libraries for authentication, authorization, and storage
+- Frontend: Vite, React 18, Tailwind, shadcn ui components, TypeScript, Amplify libraries for authentication, authorization, and storage
 - Database: DynamoDB for radio logs
 - API: AppSync for GraphQL data access
 - Chat: Amplify Gen2 AI Conversation data model
